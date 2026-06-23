@@ -1,5 +1,5 @@
+import 'package:doctor_clinic_dummy/screens/admin_dashboard_screen.dart';
 import 'package:flutter/material.dart';
-import 'splash_screen.dart';
 import 'clinic_list_screen.dart';
 
 class RoleSelectionScreen extends StatelessWidget {
@@ -9,7 +9,7 @@ class RoleSelectionScreen extends StatelessWidget {
     if (role == 'admin') {
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (_) => SplashScreen()),
+        MaterialPageRoute(builder: (_) => AdminDashboardScreen()),
       );
     } else {
       Navigator.push(
@@ -22,21 +22,23 @@ class RoleSelectionScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.all(20),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            ElevatedButton(
-              onPressed: () => navigate(context, 'admin'),
-              child: const Text("Admin"),
-            ),
-            const SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: () => navigate(context, 'patient'),
-              child: const Text("Patient"),
-            ),
-          ],
+      body: Center(
+        child: Padding(
+          padding: const EdgeInsets.all(20),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              ElevatedButton(
+                onPressed: () => navigate(context, 'admin'),
+                child: const Text("Admin"),
+              ),
+              const SizedBox(height: 20),
+              ElevatedButton(
+                onPressed: () => navigate(context, 'patient'),
+                child: const Text("Patient"),
+              ),
+            ],
+          ),
         ),
       ),
     );

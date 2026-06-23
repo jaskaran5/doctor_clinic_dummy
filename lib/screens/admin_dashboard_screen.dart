@@ -1,13 +1,17 @@
 import 'package:doctor_clinic_dummy/screens/app_state.dart';
 import 'package:flutter/material.dart';
 
-class AdminDashboardScreen extends StatelessWidget {
+class AdminDashboardScreen extends StatefulWidget {
   const AdminDashboardScreen({super.key});
 
   @override
+  State<AdminDashboardScreen> createState() => _AdminDashboardScreenState();
+}
+
+class _AdminDashboardScreenState extends State<AdminDashboardScreen> {
+  @override
   Widget build(BuildContext context) {
     final appState = AppState.of(context);
-
     return Scaffold(
       appBar: AppBar(title: const Text("Admin Dashboard")),
       body: Padding(

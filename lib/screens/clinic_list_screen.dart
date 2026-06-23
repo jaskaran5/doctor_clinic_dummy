@@ -3,14 +3,13 @@ import 'package:flutter/material.dart';
 import '../widgets/doctor_availability_badge.dart';
 
 class ClinicListScreen extends StatelessWidget {
-  const ClinicListScreen({super.key});
+  ClinicListScreen({super.key});
 
+  final nameController = TextEditingController();
+  final phoneController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     final appState = AppState.of(context);
-    final nameController = TextEditingController();
-    final phoneController = TextEditingController();
-
     void submit() {
       final appState = AppState.of(context);
 
