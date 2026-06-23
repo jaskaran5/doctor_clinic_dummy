@@ -12,11 +12,17 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    Future.delayed(const Duration(seconds: 2), () {
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(builder: (_) => AdminDashboardScreen()),
-      );
+    navigate();
+  }
+
+  Future<void> navigate() async {
+    await Future.delayed(const Duration(seconds: 2), () {
+      if (mounted) {
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(builder: (_) => AdminDashboardScreen()),
+        );
+      }
     });
   }
 

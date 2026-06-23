@@ -7,17 +7,17 @@ class AppState extends StatefulWidget {
 
   const AppState({super.key, required this.child});
 
-  static _AppStateState of(BuildContext context) {
+  static App of(BuildContext context) {
     final inherited = context
         .dependOnInheritedWidgetOfExactType<_AppStateInherited>();
     return inherited!.data;
   }
 
   @override
-  State<AppState> createState() => _AppStateState();
+  State<AppState> createState() => App();
 }
 
-class _AppStateState extends State<AppState> {
+class App extends State<AppState> {
   bool isDoctorAvailable = false;
 
   List<Map<String, String>> users = [];
@@ -103,7 +103,7 @@ class _AppStateState extends State<AppState> {
 }
 
 class _AppStateInherited extends InheritedWidget {
-  final _AppStateState data;
+  final App data;
 
   const _AppStateInherited({required this.data, required super.child});
 
