@@ -47,8 +47,7 @@ name: Flutter CI
 on:
   push:
     branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+  
 
 jobs:
   build:
@@ -71,3 +70,11 @@ jobs:
 
       # ✅ Build (safe version first)
       - run: flutter build apk --release
+
+      # by this code we upload the build into this 
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-apk
+          path: build/app/outputs/flutter-apk/app-release.apk
+          
