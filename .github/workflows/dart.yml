@@ -23,7 +23,8 @@ jobs:
       # https://github.com/dart-lang/setup-dart/blob/main/README.md
       # - uses: dart-lang/setup-dart@v1
       - uses: dart-lang/setup-dart@9a04e6d73cca37bd455e0608d7e5092f881fd603
-
+        with:
+          flutter-version: '3.44.2'
       - name: Install dependencies
         run: dart pub get
 
@@ -40,3 +41,12 @@ jobs:
       # want to change this to 'flutter test'.
       - name: Run tests
         run: dart test
+        # This is the Commands for perform.
+      # - run: flutter pub get
+      # - run: flutter analyze
+      # - run: flutter test
+      - run: flutter build apk --release
+      - uses: actions/upload-artifact@v4
+        with:
+          name: app-release
+          path: build/app/outputs/flutter-apk/app-release.apk
