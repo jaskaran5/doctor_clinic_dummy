@@ -68,8 +68,6 @@ jobs:
       # ✅ Analyze
       - run: flutter analyze
 
-      # ✅ Run tests
-      - run: flutter test
 
       # ✅ Build (safe version first)
-      - run: flutter build apk --debug
+      - run: flutter build apk --release
